@@ -43,6 +43,71 @@ updated: 2026-06-17
 
 ---
 
+## Download data
+
+All datasets are available directly from the GitHub repo:
+
+```python
+import pandas as pd
+
+BASE = "https://raw.githubusercontent.com/matheusfacure/causal-inference-in-python-code/main/causal-inference-in-python/data"
+
+# Load any dataset by name
+xmas_sales = pd.read_csv(f"{BASE}/xmas_sales.csv")
+cross_sell_email = pd.read_csv(f"{BASE}/cross_sell_email.csv")
+rec_ab_test = pd.read_csv(f"{BASE}/rec_ab_test.csv")
+risk_data = pd.read_csv(f"{BASE}/risk_data.csv")
+spend_data = pd.read_csv(f"{BASE}/spend_data.csv")
+risk_data_rnd = pd.read_csv(f"{BASE}/risk_data_rnd.csv")
+spend_data_rnd = pd.read_csv(f"{BASE}/spend_data_rnd.csv")
+management_training = pd.read_csv(f"{BASE}/management_training.csv")
+interest_rate = pd.read_csv(f"{BASE}/interest_rate.csv")
+daily_restaurant_sales = pd.read_csv(f"{BASE}/daily_restaurant_sales.csv")
+discount_data = pd.read_csv(f"{BASE}/discount_data.csv")
+email_rnd_data = pd.read_csv(f"{BASE}/email_rnd_data.csv")
+email_obs_data = pd.read_csv(f"{BASE}/email_obs_data.csv")
+short_offline_mkt_south = pd.read_csv(f"{BASE}/short_offline_mkt_south.csv")
+short_offline_mkt_all_regions = pd.read_csv(f"{BASE}/short_offline_mkt_all_regions.csv")
+offline_mkt_staggered = pd.read_csv(f"{BASE}/offline_mkt_staggered.csv")
+online_mkt = pd.read_csv(f"{BASE}/online_mkt.csv")
+online_mkt_cov = pd.read_csv(f"{BASE}/online_mkt_cov.csv")
+sb_exp_every = pd.read_csv(f"{BASE}/sb_exp_every.csv")
+sb_exp_opt = pd.read_csv(f"{BASE}/sb_exp_opt.csv")
+prime_card = pd.read_csv(f"{BASE}/prime_card.csv")
+prime_card_discontinuity = pd.read_csv(f"{BASE}/prime_card_discontinuity.csv")
+```
+
+---
+
+## Complete dataset index
+
+| Dataset | Treatment | Outcome | True Effect | Design | Used in |
+|---------|-----------|---------|-------------|--------|---------|
+| `xmas_sales.csv` | `is_on_sale` | `weekly_amount_sold` | +50 (constant) | Confounded observational | [[potential outcomes]], [[bias equation]] |
+| `cross_sell_email.csv` | `cross_sell_email` (3-arm) | `conversion` | Randomized | A/B test | [[randomized experiments]] |
+| `rec_ab_test.csv` | `recommender` | `watch_time` | +3 (pre-rescale) | A/B test | [[linear regression for causal inference]] |
+| `risk_data.csv` | `credit_limit` | `default` | +0.005 | Confounded | [[linear regression for causal inference]], [[Frisch-Waugh-Lovell theorem]] |
+| `spend_data.csv` | `credit_limit` | `spend` | 120·limit^(1/2.5) | Confounded, non-linear | [[linear regression for causal inference]] |
+| `risk_data_rnd.csv` | `credit_limit` | `default` | +0.005 | Quasi-random within buckets | [[positivity]] |
+| `spend_data_rnd.csv` | `credit_limit` | `spend` | 20·√limit | Quasi-random within buckets | [[positivity]] |
+| `management_training.csv` | `intervention` | `engagement_score` | Confounded | Observational PS | [[propensity score]], [[Inverse Probability Weighting (IPW)]], [[propensity score matching]] |
+| `interest_rate.csv` | `interest` | `duration` | -0.8 (linear) | Confounded continuous | [[S-learner]], [[double machine learning]] |
+| `daily_restaurant_sales.csv` | `discounts` | `sales` | Heterogeneous | Randomized continuous | [[CATE]], [[evaluating CATE]] |
+| `discount_data.csv` | `discounts` | `sales` | Same as above | Alias of daily_restaurant_sales | [[S-learner]], [[double machine learning]] |
+| `email_rnd_data.csv` | `mkt_email` | `next_mnth_pv` | Heterogeneous CATE | Randomized (test set) | [[T-learner]], [[X-learner]] |
+| `email_obs_data.csv` | `mkt_email` | `next_mnth_pv` | Same CATE, biased PS | Observational (train) | [[T-learner]], [[X-learner]] |
+| `short_offline_mkt_south.csv` | `treated` | `downloads` | Ramping ATT | DiD (south only) | [[Difference-in-Differences (DiD)]] |
+| `short_offline_mkt_all_regions.csv` | `treated` | `downloads` | Ramping ATT | DiD (all regions) | [[Difference-in-Differences (DiD)]] |
+| `offline_mkt_staggered.csv` | `treated` | `downloads` | Heterogeneous, staggered | Staggered DiD (3 cohorts) | [[Difference-in-Differences (DiD)]] |
+| `online_mkt.csv` | marketing (3 cities) | `app_download` | 40-60% lift | SC/Geo | [[Synthetic Control]], [[geo experiment]] |
+| `online_mkt_cov.csv` | marketing (3 cities) | `app_download_pct` | Same + covariate | SC with covariates | [[Synthetic Control]] |
+| `sb_exp_every.csv` | `d` | `delivery_time` | +6 (carryover [3,2,1]) | Switchback (random every period) | [[switchback experiment]] |
+| `sb_exp_opt.csv` | `d` | `delivery_time` | +6 (carryover [3,2,1]) | Switchback (optimized blocks m=2) | [[switchback experiment]] |
+| `prime_card.csv` | `prime_card` | `pv` | LATE=700 (compliers) | IV with compliance | [[Instrumental Variables (IV)]] |
+| `prime_card_discontinuity.csv` | `prime_card` | `pv` | Local at cutoff | RDD (balance>5000) | [[Regression Discontinuity Design (RDD)]] |
+
+---
+
 ## Key DGPs
 
 ### Confounded observational (xmas_sales)

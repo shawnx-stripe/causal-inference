@@ -17,6 +17,11 @@ updated: 2026-06-17
 > [!summary]
 > Identification asks: can the causal effect be expressed as a function of observable data? Under the conditional independence assumption (CIA) and positivity, the adjustment formula recovers causal effects by stratifying on confounders and averaging.
 
+> [!tip] Sources
+> - [03-Graphical-Models.ipynb](https://github.com/matheusfacure/causal-inference-in-python-code/blob/main/causal-inference-in-python/03-Graphical-Models.ipynb) — CIA, adjustment formula, stratified estimation
+> - [Ch 4: Graphical Causal Models](https://matheusfacure.github.io/python-causality-handbook/04-Graphical-Causal-Models.html)
+> - Data: consultancy example — naive ATE=1.667, adjusted ATE=0.15–0.20 after stratifying on `profits_prev_6m`
+
 ## Conditional Independence Assumption (CIA)
 
 $$

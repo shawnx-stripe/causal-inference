@@ -87,11 +87,16 @@ updated: 2026-06-16
 
 ## Geo and switchback experiments
 
-- [[geo experiment]] — geographic treatment assignment with buffer zones
-- [[switchback experiment]] — temporal rotation of treatment
+- [[geo experiment]] — geographic treatment assignment, SC-based design optimization
+- [[switchback experiment]] — temporal rotation of treatment, carryover effects
 - [[stepped-wedge design]] — sequential rollout across clusters
 - [[buffer zone design]] — spatial separation to control spillovers
 - [[randomized saturation design]] — cluster-level treatment intensity variation
+
+> [!tip] Handbook chapters
+> - [Ch 8: Instrumental Variables](https://matheusfacure.github.io/python-causality-handbook/08-Instrumental-Variables.html)
+> - [Ch 9: Non Compliance and LATE](https://matheusfacure.github.io/python-causality-handbook/09-Non-Compliance-and-LATE.html)
+> - [Ch 16: Regression Discontinuity Design](https://matheusfacure.github.io/python-causality-handbook/16-Regression-Discontinuity-Design.html)
 
 ---
 

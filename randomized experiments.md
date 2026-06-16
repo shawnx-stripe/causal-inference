@@ -17,6 +17,12 @@ updated: 2026-06-17
 > [!summary]
 > Randomization makes treatment assignment independent of all confounders — observed and unobserved — by design. This eliminates [[bias equation|selection bias]], making the simple difference in means a valid causal estimator.
 
+> [!tip] Sources
+> - [02-Randomised-Experiments-and-Stats-Review.ipynb](https://github.com/matheusfacure/causal-inference-in-python-code/blob/main/causal-inference-in-python/02-Randomised-Experiments-and-Stats-Review.ipynb)
+> - [Ch 2: Randomised Experiments](https://matheusfacure.github.io/python-causality-handbook/02-Randomised-Experiments.html)
+> - [Ch 3: The Most Dangerous Equation](https://matheusfacure.github.io/python-causality-handbook/03-Stats-Review-The-Most-Dangerous-Equation.html)
+> - Data: `cross_sell_email.csv` (3-arm A/B test), `enem_scores.csv` (small-sample variance)
+
 ## Why randomization works
 
 By random assignment: $T \perp (Y(1), Y(0))$

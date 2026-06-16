@@ -14,6 +14,11 @@ updated: 2026-06-17
 > [!summary]
 > The X-learner improves on the [[T-learner]] for imbalanced treatment groups by cross-imputing pseudo treatment effects, then combining estimates via propensity-score weighting. Particularly effective when one arm is much larger than the other.
 
+> [!tip] Sources
+> - [07-Meta-Learners.ipynb](https://github.com/matheusfacure/causal-inference-in-python-code/blob/main/causal-inference-in-python/07-Meta-Learners.ipynb) — "X-Learner" section
+> - [Ch 21: Meta Learners](https://matheusfacure.github.io/python-causality-handbook/21-Meta-Learners.html)
+> - Data: `email_obs_data.csv` / `email_rnd_data.csv` — evaluated via `fklearn` relative cumulative gain AUC
+
 ## Two-stage procedure
 
 **Stage 1** — Fit outcome models (same as T-learner):

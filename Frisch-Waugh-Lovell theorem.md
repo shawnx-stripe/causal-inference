@@ -18,6 +18,11 @@ updated: 2026-06-17
 > [!summary]
 > The FWL theorem states that the coefficient on a variable of interest in a multivariate regression equals the coefficient from a bivariate regression of residualized $Y$ on residualized $T$ — both residualized against the other covariates. This "debiasing" intuition is the foundation of [[double machine learning]].
 
+> [!tip] Sources
+> - [04-The-Unreasonable-Effectiveness-of-Linear-Regression.ipynb](https://github.com/matheusfacure/causal-inference-in-python-code/blob/main/causal-inference-in-python/04-The-Unreasonable-Effectiveness-of-Linear-Regression.ipynb) — "Frisch-Waugh-Lovell Theorem and Orthogonalization" section
+> - [Appendix: Debiasing with Orthogonalization](https://matheusfacure.github.io/python-causality-handbook/Debiasing-with-Orthogonalization.html)
+> - Data: `risk_data.csv` — debiasing credit_limit against wage + credit_scores recovers the same coefficient as multivariate OLS
+
 ## Core idea
 
 In the regression $Y = \tau T + X\beta + \varepsilon$:

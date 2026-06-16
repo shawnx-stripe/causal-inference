@@ -19,6 +19,12 @@ updated: 2026-06-17
 > [!summary]
 > Double/Debiased Machine Learning (DML) uses the [[Frisch-Waugh-Lovell theorem]] with ML: residualize both treatment and outcome against confounders using flexible learners, then regress residuals on residuals. Cross-fitting prevents overfitting. Extends naturally to CATE estimation via the R-learner objective.
 
+> [!tip] Sources
+> - [07-Meta-Learners.ipynb](https://github.com/matheusfacure/causal-inference-in-python-code/blob/main/causal-inference-in-python/07-Meta-Learners.ipynb) — "Double/Debiased Machine Learning" section
+> - [Ch 22: Debiased/Orthogonal Machine Learning](https://matheusfacure.github.io/python-causality-handbook/22-Debiased-Orthogonal-Machine-Learning.html)
+> - [Appendix: Debiasing with Orthogonalization](https://matheusfacure.github.io/python-causality-handbook/Debiasing-with-Orthogonalization.html)
+> - Data: `discount_data.csv` (continuous treatment). The notebook includes a "Visual Intuition for Double-ML" section showing how residualization reveals heterogeneity by `x_h` in a 2-covariate simulation.
+
 ## ATE estimation (Robinson decomposition)
 
 **Step 1 — Debias**: $\tilde{T}_i = T_i - \hat{\mathbb{E}}[T \mid X_i]$ (treatment residual)

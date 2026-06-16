@@ -16,6 +16,12 @@ updated: 2026-06-17
 > [!summary]
 > Synthetic control constructs a weighted combination of untreated units that best approximates the treated unit's pre-treatment trajectory. The post-treatment gap between the treated unit and its synthetic counterfactual estimates the causal effect. Ideal when few units are treated and [[parallel trends]] is too strong.
 
+> [!tip] Sources
+> - [09-Synthetic-Control.ipynb](https://github.com/matheusfacure/causal-inference-in-python-code/blob/main/causal-inference-in-python/09-Synthetic-Control.ipynb)
+> - [Ch 15: Synthetic Control](https://matheusfacure.github.io/python-causality-handbook/15-Synthetic-Control.html)
+> - [Appendix: Conformal Inference for Synthetic Controls](https://matheusfacure.github.io/python-causality-handbook/Conformal-Inference-for-Synthetic-Control.html)
+> - Data: `online_mkt.csv` (50 Brazilian cities, 3 treated starting 2022-05-01 with 40-60% lifts), `online_mkt_cov.csv` (adds competitor downloads as covariate)
+
 ## Core idea
 
 Find non-negative weights $w$ summing to 1 such that the weighted control units match the treated unit pre-treatment:

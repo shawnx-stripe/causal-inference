@@ -16,6 +16,11 @@ updated: 2026-06-17
 > [!summary]
 > IPW reweights observed outcomes by the inverse of the [[propensity score]] to create a pseudo-population where treatment is independent of confounders. The ATE-IPW estimator weights treated units by $1/e(X)$ and controls by $1/(1-e(X))$.
 
+> [!tip] Sources
+> - [05-Propensity-Score.ipynb](https://github.com/matheusfacure/causal-inference-in-python-code/blob/main/causal-inference-in-python/05-Propensity-Score.ipynb) — "Inverse Propensity Weighting" section
+> - [Ch 11: Propensity Score](https://matheusfacure.github.io/python-causality-handbook/11-Propensity-Score.html)
+> - Data: `management_training.csv` — IPW recovers ATE≈0.27 matching the adjusted OLS benchmark
+
 ## ATE estimator
 
 $$

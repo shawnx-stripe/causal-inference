@@ -91,12 +91,18 @@ updated: 2026-06-16
 
 ## Reading list
 
-- Facure, *Causal Inference in Python* (O'Reilly, 2023)
+- Facure, *Causal Inference in Python* (O'Reilly, 2023) — [Code repo](https://github.com/matheusfacure/causal-inference-in-python-code)
+- Facure, [*Causal Inference for the Brave and True*](https://matheusfacure.github.io/python-causality-handbook/landing-page.html) — expanded online companion (25 chapters + appendices)
 - Angrist & Pischke, *Mostly Harmless Econometrics*
 - Imbens & Rubin, *Causal Inference for Statistics, Social, and Biomedical Sciences*
 - Hernán & Robins, *Causal Inference: What If*
 - Cunningham, *Causal Inference: The Mixtape*
 - Athey & Imbens, "Machine Learning Methods Economists Should Know About"
+
+## Data
+
+- [[simulated data]] — all DGPs with known causal structures for validation
+- [Simulated-Data.ipynb](https://github.com/matheusfacure/causal-inference-in-python-code/blob/main/Simulated-Data.ipynb) — generation code
 
 ---
 

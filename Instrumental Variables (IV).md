@@ -17,6 +17,12 @@ updated: 2026-06-17
 > [!summary]
 > Instrumental variables identify causal effects when treatment is endogenous (confounded by unobservables). An instrument $Z$ affects the outcome $Y$ *only through* treatment $T$. The Wald estimator (reduced form / first stage) recovers the [[Local Average Treatment Effect (LATE)]] for compliers. 2SLS generalizes to multiple instruments and controls.
 
+> [!tip] Sources
+> - [11-Non-Compliance-and-Instruments.ipynb](https://github.com/matheusfacure/causal-inference-in-python-code/blob/main/causal-inference-in-python/11-Non-Compliance-and-Instruments.ipynb)
+> - [Ch 8: Instrumental Variables](https://matheusfacure.github.io/python-causality-handbook/08-Instrumental-Variables.html)
+> - [Ch 9: Non Compliance and LATE](https://matheusfacure.github.io/python-causality-handbook/09-Non-Compliance-and-LATE.html)
+> - Data: `prime_card.csv` — instrument=`prime_eligible` (randomized), treatment=`prime_card`, LATE=700 for compliers. Contains compliance types column `categ`.
+
 ## When to use IV
 
 When unobserved confounders $U$ affect both $T$ and $Y$:

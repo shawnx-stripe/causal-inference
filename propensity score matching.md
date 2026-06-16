@@ -16,6 +16,11 @@ updated: 2026-06-17
 > [!summary]
 > Match each treated unit to the control unit with the most similar [[propensity score]], then estimate the ATE as the average difference in outcomes between matched pairs. Simple but can be high-variance with poor overlap.
 
+> [!tip] Sources
+> - [05-Propensity-Score.ipynb](https://github.com/matheusfacure/causal-inference-in-python-code/blob/main/causal-inference-in-python/05-Propensity-Score.ipynb) — "Propensity Score Matching" section
+> - [Ch 10: Matching](https://matheusfacure.github.io/python-causality-handbook/10-Matching.html)
+> - Data: `management_training.csv` — 1-NN matching gives ATE≈0.29
+
 ## Core idea
 
 For each treated unit $i$, find the nearest control unit $j$ in PS space:

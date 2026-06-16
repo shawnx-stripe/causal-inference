@@ -14,6 +14,11 @@ updated: 2026-06-17
 > [!summary]
 > The T-learner fits separate outcome models for treated ($\mu_1$) and control ($\mu_0$) units, then estimates CATE as the difference: $\hat{\tau}(x) = \hat{\mu}_1(x) - \hat{\mu}_0(x)$. Simple but can fail when one arm has limited data.
 
+> [!tip] Sources
+> - [07-Meta-Learners.ipynb](https://github.com/matheusfacure/causal-inference-in-python-code/blob/main/causal-inference-in-python/07-Meta-Learners.ipynb) — "T-Learner" section
+> - [Ch 21: Meta Learners](https://matheusfacure.github.io/python-causality-handbook/21-Meta-Learners.html)
+> - Data: `email_obs_data.csv` (300K observational, train), `email_rnd_data.csv` (10K randomized, test)
+
 ## Estimation
 
 1. Fit $\hat{\mu}_0(x)$ on control data: $(X_i, Y_i)$ where $T_i = 0$

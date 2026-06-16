@@ -15,6 +15,11 @@ updated: 2026-06-17
 > [!summary]
 > The bias equation decomposes the naive associational estimate (difference in group means) into the true causal effect plus systematic bias from non-random treatment assignment. Understanding this decomposition motivates every causal identification strategy.
 
+> [!tip] Sources
+> - [01-Introduction-To-Causal-Inference.ipynb](https://github.com/matheusfacure/causal-inference-in-python-code/blob/main/causal-inference-in-python/01-Introduction-To-Causal-Inference.ipynb)
+> - [Ch 1: Introduction To Causality](https://matheusfacure.github.io/python-causality-handbook/01-Introduction-To-Causality.html)
+> - Data: `xmas_sales.csv` — naive comparison is biased because `unit_fe` and `avg_week_sales` confound treatment
+
 ## Core idea
 
 The naive estimator compares treated vs. control means:

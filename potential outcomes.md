@@ -17,6 +17,11 @@ updated: 2026-06-17
 > [!summary]
 > The potential outcomes framework defines causal effects as contrasts between outcomes a unit *would* experience under different treatments. Only one potential outcome is ever observed; the other is the counterfactual. This is the fundamental problem of causal inference.
 
+> [!tip] Sources
+> - [01-Introduction-To-Causal-Inference.ipynb](https://github.com/matheusfacure/causal-inference-in-python-code/blob/main/causal-inference-in-python/01-Introduction-To-Causal-Inference.ipynb)
+> - [Ch 1: Introduction To Causality](https://matheusfacure.github.io/python-causality-handbook/01-Introduction-To-Causality.html)
+> - Data: `xmas_sales.csv` (true ATE = 50) — see [[simulated data]]
+
 ## Core idea
 
 For unit $i$ with binary treatment $T_i \in \{0, 1\}$:

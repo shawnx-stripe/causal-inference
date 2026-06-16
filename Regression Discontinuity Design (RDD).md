@@ -16,6 +16,11 @@ updated: 2026-06-17
 > [!summary]
 > RDD exploits a sharp cutoff in a continuous running variable that determines treatment assignment. Units just above and below the cutoff are nearly identical on all characteristics, creating a local quasi-experiment. RDD can be viewed as [[Instrumental Variables (IV)|IV]] with a threshold instrument.
 
+> [!tip] Sources
+> - [11-Non-Compliance-and-Instruments.ipynb](https://github.com/matheusfacure/causal-inference-in-python-code/blob/main/causal-inference-in-python/11-Non-Compliance-and-Instruments.ipynb) — "Discontinuity Design" section
+> - [Ch 16: Regression Discontinuity Design](https://matheusfacure.github.io/python-causality-handbook/16-Regression-Discontinuity-Design.html)
+> - Data: `prime_card_discontinuity.csv` — cutoff at balance=5000, running variable centered at cutoff, estimates local ITT via interaction regression
+
 ## Core idea
 
 Treatment assigned by a rule: $T_i = \mathbf{1}(R_i > c)$ where $R$ is the running variable and $c$ is the cutoff.

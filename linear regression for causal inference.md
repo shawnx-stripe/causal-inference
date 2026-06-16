@@ -16,6 +16,12 @@ updated: 2026-06-17
 > [!summary]
 > OLS regression can identify causal effects when the right covariates are included: it adjusts for confounders by partialling out their influence. The coefficient on treatment is causal under [[Unconfoundedness]], but wrong controls can introduce bias (Simpson's paradox, [[collider bias]]).
 
+> [!tip] Sources
+> - [04-The-Unreasonable-Effectiveness-of-Linear-Regression.ipynb](https://github.com/matheusfacure/causal-inference-in-python-code/blob/main/causal-inference-in-python/04-The-Unreasonable-Effectiveness-of-Linear-Regression.ipynb)
+> - [Ch 5: The Unreasonable Effectiveness of Linear Regression](https://matheusfacure.github.io/python-causality-handbook/05-The-Unreasonable-Effectiveness-of-Linear-Regression.html)
+> - [Ch 6: Grouped and Dummy Regression](https://matheusfacure.github.io/python-causality-handbook/06-Grouped-and-Dummy-Regression.html)
+> - Data: `risk_data.csv` (credit limit → default, confounded by credit scores and wage), `rec_ab_test.csv` (A/B test baseline)
+
 ## When OLS is causal
 
 Under CIA + linearity, regressing $Y$ on $T$ and confounders $X$:

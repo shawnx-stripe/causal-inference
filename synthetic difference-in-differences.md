@@ -17,6 +17,11 @@ updated: 2026-06-17
 > [!summary]
 > Synthetic DiD combines [[Synthetic Control|SC unit weights]] with time weights to produce a doubly-weighted DiD estimator. Unit weights make the control group match the treated unit's trajectory; time weights make pre-treatment periods informative of the post-treatment counterfactual. More robust than either DiD or SC alone.
 
+> [!tip] Sources
+> - [09-Synthetic-Control.ipynb](https://github.com/matheusfacure/causal-inference-in-python-code/blob/main/causal-inference-in-python/09-Synthetic-Control.ipynb) — "Synthetic Difference-in-Differences" section
+> - [Ch 25: Synthetic Difference-in-Differences](https://matheusfacure.github.io/python-causality-handbook/25-Synthetic-Diff-in-Diff.html)
+> - Data: `online_mkt.csv` — same as SC but combines unit weights with time weights estimated from transposed SC problem
+
 ## Core idea
 
 Two sets of weights:

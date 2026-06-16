@@ -58,12 +58,18 @@ updated: 2026-06-16
 
 ## Doubly robust estimation
 
-- [[Doubly Robust estimators]] — consistency if either PS or outcome model correct
+- [[doubly robust estimation]] — consistency if either PS or outcome model correct
 - [[Augmented Inverse Probability Weighting (AIPW)]] — augmented IPW
 - [[Targeted Maximum Likelihood Estimation (TMLE)]] — substitution-based DR
 - [[double machine learning]] — Neyman orthogonality, cross-fitting
 - [[cross-fitting]] — sample splitting for valid ML-based inference
 - [[Super Learner]] — ensemble nuisance estimation
+
+> [!tip] Handbook chapters
+> - [Ch 5: Linear Regression](https://matheusfacure.github.io/python-causality-handbook/05-The-Unreasonable-Effectiveness-of-Linear-Regression.html)
+> - [Ch 10: Matching](https://matheusfacure.github.io/python-causality-handbook/10-Matching.html)
+> - [Ch 11: Propensity Score](https://matheusfacure.github.io/python-causality-handbook/11-Propensity-Score.html)
+> - [Ch 12: Doubly Robust Estimation](https://matheusfacure.github.io/python-causality-handbook/12-Doubly-Robust-Estimation.html)
 
 ---
 

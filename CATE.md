@@ -16,6 +16,12 @@ updated: 2026-06-17
 > [!summary]
 > The Conditional Average Treatment Effect $\tau(x) = \mathbb{E}[Y(1) - Y(0) \mid X = x]$ captures how treatment effects vary with observable characteristics. Moving from ATE to CATE enables personalized targeting — treating only those who benefit.
 
+> [!tip] Sources
+> - [06-Effect-Heterogeneity.ipynb](https://github.com/matheusfacure/causal-inference-in-python-code/blob/main/causal-inference-in-python/06-Effect-Heterogeneity.ipynb)
+> - [Ch 18: Heterogeneous Treatment Effects and Personalization](https://matheusfacure.github.io/python-causality-handbook/18-Heterogeneous-Treatment-Effects-and-Personalization.html)
+> - [Appendix: When Prediction Fails](https://matheusfacure.github.io/python-causality-handbook/When-Prediction-Fails.html)
+> - Data: `daily_restaurant_sales.csv` (randomized discounts with heterogeneous effects by context)
+
 ## Core idea
 
 The ATE can hide important heterogeneity. CATE reveals *who* benefits and by how much:

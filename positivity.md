@@ -16,6 +16,10 @@ updated: 2026-06-17
 > [!summary]
 > Positivity requires that every unit has a non-zero probability of receiving each treatment level: $0 < P(T=1 \mid X) < 1$ for all $X$. When violated, causal effects are not identified for units with deterministic treatment — weighting blows up and matching has no valid counterfactual.
 
+> [!tip] Sources
+> - [05-Propensity-Score.ipynb](https://github.com/matheusfacure/causal-inference-in-python-code/blob/main/causal-inference-in-python/05-Propensity-Score.ipynb) — "Positivity" section (simulation showing breakdown)
+> - [Ch 11: Propensity Score](https://matheusfacure.github.io/python-causality-handbook/11-Propensity-Score.html)
+
 ## Formal statement
 
 $$

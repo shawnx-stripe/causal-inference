@@ -17,6 +17,12 @@ updated: 2026-06-17
 > [!summary]
 > Since individual treatment effects are never observed, CATE models cannot be evaluated by standard prediction metrics. Instead, we use indirect methods: effect-by-quantile plots, cumulative effect curves, and cumulative gain curves that test whether the model correctly *ranks* units by treatment responsiveness.
 
+> [!tip] Sources
+> - [06-Effect-Heterogeneity.ipynb](https://github.com/matheusfacure/causal-inference-in-python-code/blob/main/causal-inference-in-python/06-Effect-Heterogeneity.ipynb) — "Evaluating CATE Predictions" section
+> - [Ch 19: Evaluating Causal Models](https://matheusfacure.github.io/python-causality-handbook/19-Evaluating-Causal-Models.html)
+> - [Appendix: Why Prediction Metrics are Dangerous For Causal Models](https://matheusfacure.github.io/python-causality-handbook/Prediction-Metrics-For-Causal-Models.html)
+> - Package: `fklearn.causal.validation` (Nubank's `relative_cumulative_gain_curve`, `area_under_the_relative_cumulative_gain_curve`)
+
 ## Challenge
 
 We never observe $\tau_i = Y_i(1) - Y_i(0)$ — so we can't compute MSE against ground truth. Evaluation asks: does ranking by $\hat{\tau}(x)$ actually separate high-responders from low-responders?

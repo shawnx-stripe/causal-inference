@@ -16,6 +16,13 @@ updated: 2026-06-17
 > [!summary]
 > DiD estimates causal effects by comparing the change in outcomes over time between treated and control groups. The key identifying assumption is [[parallel trends]]: absent treatment, both groups would have evolved similarly. Removes time-invariant confounders by differencing.
 
+> [!tip] Sources
+> - [08-Difference-in-Differences.ipynb](https://github.com/matheusfacure/causal-inference-in-python-code/blob/main/causal-inference-in-python/08-Difference-in-Differences.ipynb)
+> - [Ch 13: Difference-in-Differences](https://matheusfacure.github.io/python-causality-handbook/13-Difference-in-Differences.html)
+> - [Ch 14: Panel Data and Fixed Effects](https://matheusfacure.github.io/python-causality-handbook/14-Panel-Data-and-Fixed-Effects.html)
+> - [Ch 24: The Difference-in-Differences Saga](https://matheusfacure.github.io/python-causality-handbook/24-The-Diff-in-Diff-Saga.html) (staggered adoption, modern estimators)
+> - Data: `short_offline_mkt_south.csv` (2-period DiD), `offline_mkt_staggered.csv` (staggered with 3 cohorts, heterogeneous ramping effects)
+
 ## Canonical 2×2 DiD
 
 $$

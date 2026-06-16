@@ -16,6 +16,12 @@ updated: 2026-06-17
 > [!summary]
 > The propensity score $e(X) = P(T=1 \mid X)$ is the probability of receiving treatment given covariates. Under [[Unconfoundedness]], adjusting for the scalar $e(X)$ is sufficient to remove confounding — it collapses high-dimensional confounders into a single number.
 
+> [!tip] Sources
+> - [05-Propensity-Score.ipynb](https://github.com/matheusfacure/causal-inference-in-python-code/blob/main/causal-inference-in-python/05-Propensity-Score.ipynb)
+> - [Ch 11: Propensity Score](https://matheusfacure.github.io/python-causality-handbook/11-Propensity-Score.html)
+> - [Appendix: Debiasing with Propensity Score](https://matheusfacure.github.io/python-causality-handbook/Debiasing-with-Propensity-Score.html)
+> - Data: `management_training.csv` — confounded by `last_engagement_score` and `tenure`; naive ATE≈0.43, adjusted≈0.27
+
 ## Definition
 
 $$

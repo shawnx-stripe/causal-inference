@@ -17,6 +17,10 @@ updated: 2026-06-17
 > [!summary]
 > Directed acyclic graphs (DAGs) represent causal structure: nodes are variables, directed edges are causal relationships. DAGs formalize which variables to condition on (and which to avoid) for valid causal identification. The three building blocks — chains, forks, and colliders — determine how association flows.
 
+> [!tip] Sources
+> - [03-Graphical-Models.ipynb](https://github.com/matheusfacure/causal-inference-in-python-code/blob/main/causal-inference-in-python/03-Graphical-Models.ipynb)
+> - [Ch 4: Graphical Causal Models](https://matheusfacure.github.io/python-causality-handbook/04-Graphical-Causal-Models.html)
+
 ## Three building blocks
 
 ### Chain (mediation): $T \to M \to Y$

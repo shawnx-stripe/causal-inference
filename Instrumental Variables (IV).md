@@ -68,6 +68,18 @@ $$
 
 Sample size requirement: $N_{\text{IV}} / N_{\text{OLS}} \approx 1 / \text{compliance}^2$
 
+## IV as unit conversion
+
+The IV estimator converts the instrument's effect on $Y$ into treatment units:
+$$
+\kappa = \frac{\partial Y / \partial Z}{\partial T / \partial Z}
+$$
+
+This "partial derivative ratio" interpretation explains why IV works: $Z$ shifts $T$ exogenously, and the ratio rescales the $Z \to Y$ effect into the $T \to Y$ effect.
+
+> [!warning]
+> Never use logistic regression in Stage 1. 2SLS consistency relies on OLS's orthogonality property ($X'\varepsilon = 0$), which logistic regression does not provide. Always use linear probability model for the first stage, even with binary treatment.
+
 ## Code
 
 ```python

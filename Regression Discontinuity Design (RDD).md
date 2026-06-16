@@ -44,6 +44,15 @@ $$
 2. **No manipulation**: Units cannot precisely sort around the cutoff
 3. **Excludability**: The cutoff only affects $Y$ through treatment (for fuzzy)
 
+## Kernel weighting
+
+The triangular kernel gives higher weight to observations near the cutoff:
+$$
+K(R, c, h) = \mathbf{1}\{|R-c| \leq h\} \cdot \left(1 - \frac{|R-c|}{h}\right)
+$$
+
+Applied as WLS weights in the local linear regression.
+
 ## Estimation
 
 Local linear regression with treatment indicator and running variable interaction:
@@ -62,21 +71,29 @@ $$
 
 ```python
 import statsmodels.formula.api as smf
+import numpy as np
+
+# Triangular kernel for local weighting
+def kernel(R, c, h):
+    indicator = (np.abs(R - c) <= h).astype(float)
+    return indicator * (1 - np.abs(R - c) / h)
 
 # Center running variable at cutoff
 df["balance_centered"] = df["balance"] - 5000
 df["above_cutoff"] = (df["balance_centered"] > 0).astype(int)
 
-# Sharp RDD via interaction regression
-rdd_model = smf.ols(
+# Sharp RDD with kernel weighting (WLS)
+weights = kernel(df["balance_centered"], c=0, h=1000)
+rdd_model = smf.wls(
     "pv ~ above_cutoff * balance_centered",
-    data=df
+    data=df, weights=weights
 ).fit()
-
-# ITT effect = coefficient on above_cutoff
 itt = rdd_model.params["above_cutoff"]
 
-# For fuzzy RDD: use IV with above_cutoff as instrument for treatment
+# Simple OLS version (no kernel)
+rdd_simple = smf.ols("pv ~ above_cutoff * balance_centered", data=df).fit()
+
+# Fuzzy RDD via IV
 from linearmodels import IV2SLS
 fuzzy = IV2SLS.from_formula(
     "pv ~ 1 + balance_centered + [prime_card ~ above_cutoff]",

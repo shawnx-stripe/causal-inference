@@ -86,6 +86,22 @@ cate_dml = cate_model.predict(test[X])
 - **Cross-fitting**: prevents the nuisance ML from overfitting to the estimation sample
 - Combines the debiasing insight of [[Frisch-Waugh-Lovell theorem|FWL]] with the flexibility of ML
 
+## Two overfitting risks
+
+1. Overfitting $\hat{m}_Y$ → shrinks outcome residuals → biases $\hat{\tau}$ toward zero
+2. Overfitting $\hat{m}_T$ → shrinks treatment residuals → inflates SE (like [[positivity]] violation)
+
+## Non-scientific DML (practical extension)
+
+Feed residualized $\tilde{T}$ as a feature alongside $X$ into an S-learner to predict $\tilde{Y}$. Enables full counterfactual treatment-effect curves without formal guarantees but useful in practice:
+
+```python
+# Counterfactual grid via cross-join
+pred_grid = (test.assign(jk=1)
+    .merge(pd.DataFrame({"jk": 1, T: np.linspace(t_min, t_max, 20)}), on="jk"))
+cate_curve = model.predict(pred_grid)
+```
+
 ## Related notes
 
 - [[Frisch-Waugh-Lovell theorem]]

@@ -55,6 +55,20 @@ $$
 1. **No interference** — one unit's treatment doesn't affect another's outcome
 2. **No hidden versions** — treatment is well-defined (single version)
 
+## Simulating confounded treatment assignment
+
+The `expit` (logistic) function is the standard way to generate treatment probabilities that depend on covariates — creating realistic confounding:
+
+```python
+from scipy.special import expit
+
+# Treatment probability depends on confounder (creates bias)
+propensity = expit((tuition - tuition.mean()) / tuition.std())
+treatment = np.random.binomial(1, propensity)
+```
+
+This pattern appears throughout the book's DGPs (see [[simulated data]]).
+
 ## Code
 
 ```python

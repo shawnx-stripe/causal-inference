@@ -44,6 +44,14 @@ Same ATE point estimate, lower variance.
 
 IPW creates a "pseudo-population" where the PS distributions of treated and control overlap fully — treatment assignment is effectively randomized in this weighted population.
 
+## Weight diagnostics
+
+> [!warning] Weight clipping rule of thumb
+> Weights exceeding ~20 (corresponding to $e(X) < 0.05$ or $> 0.95$) signal practical [[positivity]] violations. Options:
+> - **Clip/trim**: cap weights at a maximum (e.g., 20) — trades small bias for large variance reduction
+> - **Overlap weights**: $w(x) \propto e(x)(1-e(x))$ — focuses on well-supported region
+> - **Report effective sample size**: $\text{ESS} = (\sum w_i)^2 / \sum w_i^2$ — low ESS means a few units dominate
+
 ## Bootstrap inference
 
 ```python

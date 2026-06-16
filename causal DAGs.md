@@ -39,6 +39,17 @@ updated: 2026-06-17
 > [!warning]
 > Conditioning on a collider (or its descendant) creates spurious association. This is [[collider bias]].
 
+## Surrogate confounders
+
+A **surrogate confounder** is a cause or effect of an unmeasured confounder $U$. Conditioning on a surrogate partially closes the backdoor path through $U$ — it reduces bias without eliminating it. Examples: SAT scores as a proxy for unobserved ability, parental education as a proxy for socioeconomic background.
+
+## Descendant-of-collider conditioning
+
+> [!warning]
+> Conditioning on a **descendant** of a collider also opens the spurious path — it acts as a partial proxy for the collider itself. This is the more subtle, often-missed case of collider bias.
+
+Example: $T \to C \leftarrow Y$, $C \to D$. Conditioning on $D$ (descendant of collider $C$) partially opens the $T - C - Y$ path.
+
 ## d-separation
 
 Two sets of nodes $A$ and $B$ are d-separated given conditioning set $Z$ if every path between them is blocked. Blocked means:

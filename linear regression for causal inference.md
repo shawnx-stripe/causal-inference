@@ -22,6 +22,16 @@ updated: 2026-06-17
 > - [Ch 6: Grouped and Dummy Regression](https://matheusfacure.github.io/python-causality-handbook/06-Grouped-and-Dummy-Regression.html)
 > - Data: `risk_data.csv` (credit limit → default, confounded by credit scores and wage), `rec_ab_test.csv` (A/B test baseline)
 
+## Two interpretations of causal adjustment
+
+| | RCT (severing) | Regression (freezing) |
+|---|---|---|
+| Mechanism | Removes all arrows *into* T — nothing causes T | Holds confounders constant (freezes W=w) |
+| Graphically | Severs edges into treatment node | Conditions on confounder nodes |
+| Result | T is independent of everything | T is independent of Y *given* W |
+
+Both achieve identification but via different operations on the DAG.
+
 ## When OLS is causal
 
 Under CIA + linearity, regressing $Y$ on $T$ and confounders $X$:

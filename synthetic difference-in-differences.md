@@ -69,6 +69,41 @@ sdid = smf.wls(
 att_sdid = sdid.params["treated:post"]
 ```
 
+## L2 regularization (SDID-specific)
+
+Unlike standard SC, SDID adds an L2 penalty to the unit weight optimization:
+$$
+\min_{w_0, w} \|\bar{Y}_{\text{pre,tr}} - (Y_{\text{pre,co}} \cdot w + w_0)\|^2 + \zeta^2 T_{\text{pre}} \|w\|_2^2
+$$
+
+subject to $\sum w_i = 1$, $w_i \geq 0$.
+
+The regularization parameter:
+$$
+\zeta = (N_{\text{tr}} \cdot T_{\text{post}})^{1/4} \cdot \sigma(\Delta_{it})
+$$
+
+where $\Delta_{it} = Y_{it} - Y_{i,t-1}$ is the first difference of control outcomes. The intercept $w_0$ allows level differences (unlike standard SC which requires level matching).
+
+## Placebo SE estimation
+
+Since WLS standard errors don't account for weight estimation uncertainty, inference uses placebo permutation:
+
+```python
+from joblib import Parallel, delayed
+
+def make_placebo(data, state_col, treat_col):
+    control = data.query(f"~{treat_col}")
+    placebo_state = np.random.choice(control[state_col].unique())
+    return control.assign(**{treat_col: control[state_col] == placebo_state})
+
+effects = Parallel(n_jobs=4)(
+    delayed(sdid_estimate)(make_placebo(df, "city", "treated"))
+    for _ in range(400)
+)
+se = np.std(effects)
+```
+
 ## Why SDID improves on SC and DiD
 
 - SC alone: can fail if pre-treatment fit is poor (biased counterfactual)

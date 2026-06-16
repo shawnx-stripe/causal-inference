@@ -91,6 +91,20 @@ cate_dml = cate_model.predict(test[X])
 1. Overfitting $\hat{m}_Y$ → shrinks outcome residuals → biases $\hat{\tau}$ toward zero
 2. Overfitting $\hat{m}_T$ → shrinks treatment residuals → inflates SE (like [[positivity]] violation)
 
+## Monotonic constraints trick
+
+When treatment direction is known a priori (e.g., higher price → lower demand), enforce it in the CATE model to avoid implausible sign reversals:
+
+```python
+from lightgbm import LGBMRegressor
+
+# Force treatment effect to be monotonically negative
+features = X + [T]
+constraints = [-1 if col == T else 0 for col in features]
+model = LGBMRegressor(monotone_constraints=constraints)
+model.fit(train[features], train[Y])
+```
+
 ## Non-scientific DML (practical extension)
 
 Feed residualized $\tilde{T}$ as a feature alongside $X$ into an S-learner to predict $\tilde{Y}$. Enables full counterfactual treatment-effect curves without formal guarantees but useful in practice:

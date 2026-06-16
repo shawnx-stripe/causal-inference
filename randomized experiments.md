@@ -43,6 +43,15 @@ $$
 
 Rule of thumb: $|\text{ND}| < 0.1$ indicates good balance.
 
+## SE of the difference of two means
+
+The standard error for comparing two group means (the foundation of all A/B test inference):
+$$
+\text{SE}_{\text{diff}} = \sqrt{\frac{\sigma_1^2}{n_1} + \frac{\sigma_0^2}{n_0}}
+$$
+
+This determines CI width and test power. Note: overlapping individual CIs can still yield a significant difference test — always use the SE of the *difference*, not individual SEs.
+
 ## The most dangerous equation
 
 de Moivre's equation: $\text{SE} = \sigma / \sqrt{n}$
